@@ -1,0 +1,78 @@
+<div class="table-style">
+<?php $rate = $block->getRate(); ?>
+
+<?php if(null !== $rate): ?>
+	<?php 
+    $newdate = strtotime ( '+7 hour' , strtotime ( $rate->getCreatedAt() ) ) ;
+    $newdate = date ( 'Y-m-d H:i:s' , $newdate );
+    ?>
+    <p>Updated on <?php echo "$newdate"; ?></p>
+
+    <table >
+        <caption>Tỷ giá hối đoái</caption>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Rate</th>
+            <tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">USD</th>
+                <td>United States Dollar</td>
+                <td>1 USD=</td>
+            </tr>
+                <tr>
+                <td>AUD</td>
+                <td>Australian Dollar</td>
+                <td><?php echo $rate->getAud(); ?></td>
+            </tr>
+            <tr>
+                <th scope="row">EUR</th>
+                <td>Euro</td>
+                <td><?php echo $rate->getEur(); ?></td>
+            </tr>
+            <tr>
+                <th scope="row">CAD</th>
+                <td>Canadian Dollar</td>
+                <td><?php echo $rate->getCad(); ?></td>
+            </tr>
+            <tr>
+                <th scope="row">CHF</th>
+                <td>Swiss Franc</td>
+                <td><?php echo $rate->getChf(); ?></td>
+            </tr>
+            <tr>
+                <th scope="row">CNY</th>
+                <td>Chinese Yuan</td>
+                <td><?php echo $rate->getCny(); ?></td>
+            </tr>
+            <tr>
+                <th scope="row">GBP</th>
+                <td>British Pound Sterling</td>
+                <td><?php echo $rate->getGbp(); ?></td>
+            </tr>
+            <tr>
+                <th scope="row">JPY</th>
+                <td>Japanese Yen</td>
+                <td><?php echo $rate->getJpy(); ?></td>
+            </tr>
+            <tr>
+                <th scope="row">RUB</th>
+                <td>Russian Ruble</td>
+                <td><?php echo $rate->getRub(); ?></td>
+            </tr>
+            <tr>
+                <th scope="row">VND</th>
+                <td>Vietnamese Dong</td>
+                <td><?php echo $rate->getVnd(); ?></td>
+            </tr>
+        </tbody>
+    
+    
+    </table>
+<?php else: ?>
+    <h1 style="font-weigh: bold; opacity: 0.66;">Tỷ giá hối đoái chưa có dữ liệu!</h1>
+<?php endif; ?>
+</div>

@@ -1,5 +1,5 @@
 <?php
-namespace Vietcombank\TyGia\Controller\Index;
+namespace TienIch\TyGia\Controller\Index;
 
 class Test extends \Magento\Framework\App\Action\Action
 {

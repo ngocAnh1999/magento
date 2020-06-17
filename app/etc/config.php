@@ -243,6 +243,9 @@ return [
         'Magento_PaypalReCaptcha' => 1,
         'MSP_TwoFactorAuth' => 1,
         'Temando_ShippingRemover' => 1,
+        'TienIch_ThoiTiet' => 1,
+        'TienIch_TinTuc' => 1,
+        'TienIch_TyGia' => 1,
         'Vertex_Tax' => 1,
         'Vertex_AddressValidation' => 1,
         'Yotpo_Yotpo' => 1
