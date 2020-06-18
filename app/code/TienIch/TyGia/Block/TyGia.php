@@ -5,6 +5,7 @@ namespace TienIch\TyGia\Block;
 
 use Magento\Framework\View\Element\Template;
 use TienIch\TyGia\Cron\NgoaiTe;
+use TienIch\TyGia\Model\InsertRecord;
 
 class TyGia extends Template
 {
@@ -12,7 +13,7 @@ class TyGia extends Template
 
     public function __construct(
         Template\Context $context,
-        RateFactory $factory
+        InsertRecord $factory
     )
     {
         parent::__construct($context);

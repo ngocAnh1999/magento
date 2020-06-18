@@ -1,0 +1,74 @@
+<?php
+$cityID = "2-353412_1_AL"; // hà nội
+// "http://dataservice.accuweather.com/forecasts/v1/daily/1day/2-353412_1_AL?apikey=FVBQKvCCSsWSbaYLAMoVglcsQHno4alY";
+$apiKey = "FVBQKvCCSsWSbaYLAMoVglcsQHno4alY";
+$url = "http://dataservice.accuweather.com/forecasts/v1/daily/1day/".$cityID."?apikey=".$apiKey."&language=vi&metric=true";
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+curl_setopt($ch, CURLOPT_URL, $url);
+
+$result = curl_exec($ch);
+
+curl_close($ch);
+
+$data = json_decode($result);
+
+?>
+<div style="display: flex;">
+<?php 
+    $tomorrow = $data["Headline"];
+    $today = $data["DailyForecasts"];
+    $temperature = $today[0]["Temperature"];
+    $day = $today[0]["Day"];
+    $night = $toay[0]["Night"];
+?>
+
+    <table class="style-example"> 
+        <caption>Dự báo thời tiết khu vực Hà Nội</caption>
+        <tbody>
+            <tr>
+                <th scope="row">
+                    Dự báo ngày <?php echo $tomorrow["EffectiveDate"] ?>
+                </th>
+                <td>
+                    <?php echo $tomorrow["Text"] ?>
+                <td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">
+                    Hôm nay
+                </th>
+            </tr>
+            <tr>
+                <th scope="row" rowspan="2">
+                    Nhiệt độ (độ C)
+                </th>
+                <td>
+                    <?php echo "Minimum: ".$temperature["Minimum"]["Value"] ?>
+                </td>
+                <td>
+                    <?php echo "Maximum: ".$temperature["Maximum"]["Value"] ?>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                Ngày
+                </th>
+                <td>
+                    <?php echo $day["IconPhrase"] ?>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                Đêm
+                </th>
+                <td>
+                    <?php echo $night["IconPhrase"] ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <
+</div>

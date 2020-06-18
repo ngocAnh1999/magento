@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * tienich_index_thoitiet    
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+      <css src="TienIch_ThoiTiet::css/_module.css" />
+   </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="TienIch\ThoiTiet\Block\Index" name="tienich_index_thoitiet" template="TienIch_ThoiTiet::weather.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
